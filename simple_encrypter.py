@@ -17,7 +17,11 @@ def start():
     if selection == '1':
       text = input('\nEnter text to encrypt: ')
       password = getpass.getpass('Enter password: ')
-      encrypt(text, password)
+      password_confirm = getpass.getpass('Confirm password: ')
+      if password == password_confirm:
+        encrypt(text, password)
+      else:
+        print('\nTry again\n')
     elif selection == '2':
       text = input('\nEnter text to decrypt: ')
       password = getpass.getpass('Enter password: ')
